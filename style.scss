@@ -9,12 +9,18 @@ html {
 	padding: 0;
 	margin: 0;
 
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+	min-height: 100%;
+	width: 100%;
+	position: relative;
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
-	font-size: 14px;
-	font-family: 'Open Sans', sans-serif;
 }
 
 .background {
@@ -23,8 +29,9 @@ html {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 	background: url('assets/bg.jpg') no-repeat;
+	background-size: cover;
 	filter: brightness(0.4);
 }
 
@@ -32,6 +39,7 @@ header {
 	display: flex;
 	flex-direction: column;
 	width: 53%;
+	height: 17vh;
 
 	.social {
 		display: flex;
@@ -93,7 +101,7 @@ nav {
 		color: white;
 		font-size: 1.3em;
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
 		padding: 1vh;
 		margin-right: 1vh;
@@ -112,7 +120,7 @@ nav {
 			display: flex;
 			align-items: center;
 			width: 100%;
-			justify-content: space-between;
+			justify-content: space-around;
 			margin: 0;
 		}
 
@@ -126,7 +134,7 @@ nav {
 		p::after {
 			display: block;
 			content: '';
-			width: 2vh;
+			width: 1.5vh;
 			height: 3px;
 			background-color: white;
 		}
@@ -135,6 +143,7 @@ nav {
 			display: block;
 			position: absolute;
 			bottom: -0.3vh;
+			left: 0;
 			content: '';
 			width: 100%;
 			border-bottom: solid 0.4vh rgba(125, 125, 125, 0.8);
@@ -153,7 +162,7 @@ nav {
 	position: relative;
 	padding: 1vh;
 	width: 100%;
-	height: 40%;
+	height: 40vh;
 
 	background-color: white;
 
@@ -184,13 +193,25 @@ nav {
 		background: url('assets/grid.png');
 		filter: opacity(25%);
 	}
+
+	.sticker {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: url('assets/peralta-logo.png');
+		background-position: 6% 50%;
+		background-repeat: no-repeat;
+	}
 }
 
 .controls {
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	margin: 2vh;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
 
 	input {
 		display: none;
@@ -242,13 +263,13 @@ nav {
 	justify-content: space-between;
 	width: 100%;
 	height: 40%;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
 
 	.segment {
 		background-color: white;
 		display: flex;
 		flex-direction: column;
-		text-align: justify;
-		text-justify: justify;
 		flex-basis: 32%;
 		position: relative;
 		padding: 2vh;
@@ -259,6 +280,11 @@ nav {
 			line-height: 1;
 			color: #333;
 			margin: 0;
+		}
+
+		p {
+			text-align: justify;
+			text-justify: justify;
 		}
 
 		p:nth-of-type(1) {
@@ -295,5 +321,79 @@ nav {
 			width: 100%;
 			border-bottom: solid 0.4vh rgba(125, 125, 125, 0.8);
 		}
+	}
+}
+
+.gallery {
+	width: 100%;
+	height: 48vh;
+	margin-top: 3vh;
+	margin-bottom: 1vh;
+
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-template-rows: 50% 50%;
+	grid-column-gap: 1vh;
+  	grid-row-gap: 1vh;
+
+	.picture {
+		position: relative;
+		width: 100%;
+		height: 100%;
+
+		background-color: white;
+
+		padding: 0.5vh;
+
+		&::after {
+			display: block;
+			position: absolute;
+			left: 0;
+			bottom: -0.3vh;
+			content: '';
+			width: 100%;
+			border-bottom: solid 0.4vh rgba(125, 125, 125, 0.8);
+		}
+	}
+
+	.sk81 {
+		width: 100%;
+		height: 100%;
+		background-image: url('assets/sk8er-4.png');
+		background-repeat: no-repeat;
+		background-position: 100% 10%;
+	}
+
+	.sk82 {
+		width: 100%;
+		height: 100%;
+		background-image: url('assets/sk8er-3.png');
+		background-repeat: no-repeat;
+	}
+
+	.sk83 {
+		width: 100%;
+		height: 100%;
+		background-image: url('assets/sk8er-2.png');
+		background-repeat: no-repeat;
+		background-position: 80% 10%;
+	}
+
+	.sk84 {
+		width: 100%;
+		height: 100%;
+		background-image: url('assets/sk8er-1.png');
+		background-repeat: no-repeat;
+		background-position: 0% 50%;
+	}
+
+	.tall {
+		grid-row: 1/3;
+		grid-column: 3/3;
+	}
+
+	.long {
+		grid-row: 2/2;
+		grid-column: 1/3;
 	}
 }
